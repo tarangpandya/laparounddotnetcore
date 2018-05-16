@@ -1,4 +1,5 @@
 ﻿using BethanyPieShop.Repositories;
+using BethanyPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -16,7 +17,14 @@ namespace BethanyPieShop.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(_pieRepository.GetAllPies().OrderBy(p => p.Name));
+            var homeViewModel = new HomeViewModel
+            {
+                Title = "Welcome to Bethny's Pie Store",
+                Pies = _pieRepository
+                       .GetAllPies()
+                       .OrderBy(p => p.Name)
+            };
+            return View(homeViewModel);
         }
     }
 }
