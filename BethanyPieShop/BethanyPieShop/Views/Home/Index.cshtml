@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BethanyPieShop.Models.Pie>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @foreach (var pie in Model)
+        {
+            <div>
+                <div>
+                    <img src="@pie.ImageThumbnailUrl" alt="">
+                    <div>
+                        <h3>@pie.Price.ToString("c")</h3>
+                        <h3>
+                            @pie
+                        </h3>
+                        <p>@pie.ShortDescription</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
