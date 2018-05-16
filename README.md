@@ -1,2 +1,2 @@
 # laparounddotnetcore
-This is repository for demo purpose. 
+This repository contains code presented in demo.
