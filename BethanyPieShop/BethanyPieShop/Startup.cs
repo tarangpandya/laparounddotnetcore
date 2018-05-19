@@ -24,6 +24,7 @@ namespace BethanyPieShop
         {
             services.AddDbContext<AppDbContext>(app => app.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IPieRepository, PieRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
             services.AddMvc();
         }
 
