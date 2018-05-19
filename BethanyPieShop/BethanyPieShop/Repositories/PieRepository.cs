@@ -16,7 +16,16 @@ namespace BethanyPieShop.Repositories
 
         public IEnumerable<Pie> GetAllPies()
         {
-            return _appDbContext.Pies.OrderBy(pie => pie.Name);
+            return _appDbContext
+                    .Pies
+                    .OrderBy(pie => pie.Name);
+        }
+
+        public Pie GetPieById(int id)
+        {
+            return _appDbContext
+                    .Pies
+                    .FirstOrDefault(pie => pie.Id == id);
         }
     }
 }

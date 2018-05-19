@@ -6,5 +6,6 @@ namespace BethanyPieShop.Repositories
     public interface IPieRepository
     {
         IEnumerable<Pie> GetAllPies();
+        Pie GetPieById(int id);
     }
 }

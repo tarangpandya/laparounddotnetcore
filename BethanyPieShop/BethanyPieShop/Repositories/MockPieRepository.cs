@@ -1,5 +1,6 @@
 ﻿using BethanyPieShop.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BethanyPieShop.Repositories
 {
@@ -18,6 +19,11 @@ namespace BethanyPieShop.Repositories
         public IEnumerable<Pie> GetAllPies()
         {
             return _pies;
+        }
+
+        public Pie GetPieById(int id)
+        {
+            return _pies.FirstOrDefault(pie => pie.Id == id);
         }
 
         private void InitializePies()
