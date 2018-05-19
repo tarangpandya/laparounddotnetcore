@@ -1,9 +1,12 @@
 ﻿using BethanyPieShop.Models;
 using BethanyPieShop.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BethanyPieShop.Controllers
 {
+
+    [Authorize]
     public class FeedbackController : Controller
     {
         private readonly IFeedbackRepository _feedbackRepository;
